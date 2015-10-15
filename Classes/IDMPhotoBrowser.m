@@ -599,8 +599,9 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         _doneButton.layer.borderWidth = 1.0f;
     }
     else {
-        [_doneButton setBackgroundImage:_doneButtonImage forState:UIControlStateNormal];
-        _doneButton.contentMode = UIViewContentModeScaleAspectFit;
+        [_doneButton setImage:_doneButtonImage forState:UIControlStateNormal];
+        _doneButton.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
+        _doneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
     }
     
     UIImage *leftButtonImage = (_leftArrowImage == nil) ?
@@ -1087,7 +1088,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     
     // if ([self isLandscape:orientation]) screenWidth = screenBound.size.height;
     
-    return CGRectMake(screenWidth - 75, 30, 40, 40);
+    return CGRectMake(screenWidth - 75, 30, 30, 30);
 }
 
 - (CGRect)frameForCaptionView:(IDMCaptionView *)captionView atIndex:(NSUInteger)index {
