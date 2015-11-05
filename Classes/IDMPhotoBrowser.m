@@ -602,6 +602,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         [_doneButton setImage:_doneButtonImage forState:UIControlStateNormal];
         _doneButton.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
         _doneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
+        _doneButton.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 15, 15);
     }
     
     UIImage *leftButtonImage = (_leftArrowImage == nil) ?
@@ -1088,7 +1089,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     
     // if ([self isLandscape:orientation]) screenWidth = screenBound.size.height;
     
-    return CGRectMake(screenWidth - 45, 30, 20, 20);
+    return CGRectMake(screenWidth - 60, 30, 50, 50);
 }
 
 - (CGRect)frameForCaptionView:(IDMCaptionView *)captionView atIndex:(NSUInteger)index {
