@@ -25,7 +25,7 @@
 @end
 
 // IDMPhotoBrowser
-@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate> 
+@interface IDMPhotoBrowser : UIViewController <UIScrollViewDelegate, UIActionSheetDelegate>
 
 // Properties
 @property (nonatomic, strong) id <IDMPhotoBrowserDelegate> delegate;
@@ -42,6 +42,8 @@
 // View customization
 @property (nonatomic) BOOL displayDoneButton;
 @property (nonatomic) BOOL useWhiteBackgroundColor;
+@property (nonatomic) CGSize doneButtonSize;
+@property (nonatomic) UIEdgeInsets doneButtonImageInsets;
 @property (nonatomic, weak) UIImage *doneButtonImage;
 @property (nonatomic, weak) UIColor *trackTintColor, *progressTintColor;
 

@@ -602,7 +602,7 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
         [_doneButton setImage:_doneButtonImage forState:UIControlStateNormal];
         _doneButton.contentVerticalAlignment = UIControlContentVerticalAlignmentFill;
         _doneButton.contentHorizontalAlignment = UIControlContentHorizontalAlignmentFill;
-        _doneButton.imageEdgeInsets = UIEdgeInsetsMake(15, 15, 15, 15);
+        _doneButton.imageEdgeInsets = self.doneButtonImageInsets;
     }
     
     UIImage *leftButtonImage = (_leftArrowImage == nil) ?
@@ -1087,9 +1087,15 @@ NSLocalizedStringFromTableInBundle((key), nil, [NSBundle bundleWithPath:[[NSBund
     CGRect screenBound = self.view.bounds;
     CGFloat screenWidth = screenBound.size.width;
     
+    if (self.doneButtonSize.width == 0 && self.doneButtonSize.height == 0) {
+        return CGRectMake(screenWidth - 60, 30, 60, 60);
+    }
+    
+    return CGRectMake(screenWidth - 60, 30, self.doneButtonSize.width, self.doneButtonSize.height);
+    
     // if ([self isLandscape:orientation]) screenWidth = screenBound.size.height;
     
-    return CGRectMake(screenWidth - 60, 30, 50, 50);
+    
 }
 
 - (CGRect)frameForCaptionView:(IDMCaptionView *)captionView atIndex:(NSUInteger)index {
